@@ -1,0 +1,28 @@
+{
+  "name": "mana-vault",
+  "version": "1.0.0",
+  "description": "O projeto tem como ideia criar um e-commerce pequeno sobre produtos geeks. O usuário pode adicionar no carrinho e remover produtos, filtrar por (mais vendidos, preço, nome), poderá enviar imagens para criar um moletom, produtos com a impressora 3D, adesivos personalizados, já o administrador poderá cadastrar produtos. As APIs serão utilizadas seram: viacep para pegar retornar o endereço pelo CEP, GNews API para trazer notícias no universo geek.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel0051/mana-vault.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/daniel0051/mana-vault/issues"
+  },
+  "homepage": "https://github.com/daniel0051/mana-vault#readme",
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "xyz": "^5.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
