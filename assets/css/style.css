@@ -1,0 +1,12 @@
+/* 1. Reset listas DENTRO da barra de navegação */
+header .navbar ul {
+  list-style: none;
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* 2. Reset de padding para os links/botões DENTRO da navbar.*/
+header .navbar .nav-link,
+header .navbar .btn {
+  padding: 0 !important;
+}
