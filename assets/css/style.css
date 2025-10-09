@@ -1,0 +1,29 @@
+/* Afasta o botão da borda esquerda */
+.carousel-control-prev {
+  padding-right: 1.5rem !important;
+}
+
+/* Afasta o botão da borda direita */
+.carousel-control-next {
+  padding-left: 1.5rem !important;
+}
+
+/* Altera todos os botões indicadores dentro do carrossel para serem circulares */
+#promoCarousel .carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+}
+
+/* Padrão de altura para os banners */
+section .carousel-inner .carousel-item img {
+  display: block;
+  height: 97.5px;
+}
+
+@media (min-width: 768px) {
+  section .carousel-inner .carousel-item img {
+    height: 300px;
+  }
+}
