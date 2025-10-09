@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/daniel0051/mana-vault#readme",
   "dependencies": {
+    "bootstrap": "^5.3.8",
     "jquery": "^3.7.1",
     "xyz": "^5.0.0"
   },
