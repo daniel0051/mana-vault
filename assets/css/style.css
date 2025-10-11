@@ -1,8 +1,10 @@
 /* Paleta de cores */
 :root {
   --p9-1: #585858;
+  --p-11: #141414;
   --p-10: #292929;
   --p-6: #220743;
+  --p-4: #8E84E0;
 }
 
 /* Altera todos os botões indicadores dentro do carrossel para serem circulares */
@@ -11,18 +13,17 @@
   height: 10px;
   padding: 3px;
   border-radius: 50%;
-  border: none;
+  border: 3px solid var(--p-11);
 }
 
 /* Padrão de altura para os banners */
 section .carousel-inner .carousel-item img {
-  display: block;
   height: 40vh;
 }
 
 @media (min-width: 768px) {
   section .carousel-inner .carousel-item img {
-    height: 60vh;
+    height: 100vh;
   }
 }
 
@@ -81,15 +82,6 @@ section .carousel-inner .carousel-item img {
   color: var(--p-10);
 }
 
-.card-body a {
-  background-color: #8E84E0;
-  border: none;
-}
-
-.card-body a:hover {
-  background-color: var(--p-6);
-}
-
 /* Desktop - produtos */
 .desktop-img {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
@@ -108,14 +100,16 @@ section .carousel-inner .carousel-item img {
   position: relative;
 }
 
-.products-scroll-area {
+.products-scroll-area,
+.comments-scroll-area {
   overflow-x: scroll;
   overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 
-.products-scroll-area::-webkit-scrollbar {
+.products-scroll-area::-webkit-scrollbar,
+.comments-scroll-area::-webkit-scrollbar {
   display: none;
 }
 
@@ -140,4 +134,30 @@ section .carousel-inner .carousel-item img {
 
 .slider-right-btn {
   right: -2rem;
+}
+
+/* Comentarios */
+.dec {
+  margin: 0 auto;
+  background: var(--p-11);
+  width: 4.5rem;
+  height: 4px;
+}
+
+.slider-left-btn-c {
+  left: 0;
+}
+
+.slider-right-btn-c {
+  right: 0rem;
+}
+
+.comment-list .comment-item {
+  flex: 0 0 100%;
+}
+
+@media (min-width: 768px) {
+  .comment-list .comment-item {
+    flex: 0 0 calc(100% / 3);
+  }
 }
