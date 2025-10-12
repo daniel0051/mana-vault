@@ -3,9 +3,11 @@
   --p9-1: #585858;
   --p-11: #141414;
   --p-10: #292929;
+  --p-9: #10F6E2;
   --p-6: #220743;
   --p-5: #240F32;
   --p-4: #8E84E0;
+  --p-1: #F1A0F0;
 }
 
 /* Altera todos os botões indicadores dentro do carrossel para serem circulares */
@@ -207,4 +209,26 @@ section .carousel-inner .carousel-item img {
 
 .bi-envelope {
   color: #A540DE;
+}
+
+/* Footer */
+.text-h {
+  color: var(--p-4);
+}
+
+.icon-footer {
+  color: var(--p-9);
+}
+
+.icon-footer-s {
+  color: var(--p-1);
+}
+
+.img-c {
+  max-width: 152px;
+}
+
+.icon-w {
+  color: var(--p-9);
+  font-size: 3rem;
 }
