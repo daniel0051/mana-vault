@@ -6,21 +6,22 @@
     <title>Home</title>
 
     <!-- Fonte Montserrat -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+      media="print"
+      onload="this.media='all'"
     />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="./assets/scss/custom.css" />
@@ -33,7 +34,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar bg-dark py-1">
+      <nav class="navbar bg-dark py-1" aria-label="Navegação Principal do Site">
         <div class="container-fluid">
           <!-- Mobile / col 1 -->
           <div class="row w-100 align-items-center">
@@ -50,6 +51,7 @@
                     data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNav"
                     aria-controls="offcanvasNav"
+                    aria-label="Abrir menu"
                   >
                     <i class="bi bi-list fs-4"></i>
                   </button>
@@ -60,15 +62,19 @@
                     class="btn text-white p-1"
                     type="button"
                     data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNav"
-                    aria-controls="offcanvasNav"
+                    data-bs-target="#searchOffcanvas"
+                    aria-controls="searchOffcanvas"
+                    aria-label="Abrir Pesquisa"
                   >
-                    <i class="bi bi-search fs-4 p-1"></i>
+                    <i class="bi bi-search fs-4"></i>
                   </button>
                 </li>
               </ul>
               <!-- Logo desktop / col 1 -->
-              <a href="./index.html" class="d-none d-md-block text-lg-start"
+              <a
+                href="./index.html"
+                class="d-none d-md-block text-lg-start navbar-brand"
+                aria-label="Página Inicial ManaVault"
                 ><img
                   src="./assets/img/logo.png"
                   alt="ManaVault"
@@ -79,7 +85,11 @@
 
             <!-- Logo mobile / col 2 -->
             <div class="col-4 col-md-8 text-center">
-              <a href="./index.html" class="d-md-none">
+              <a
+                href="./index.html"
+                class="d-md-none navbar-brand"
+                aria-label="Página Inicial ManaVault"
+              >
                 <img
                   src="./assets/img/logo.png"
                   alt="ManaVault"
@@ -126,8 +136,9 @@
                   class="btn text-white p-1"
                   type="button"
                   data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasNav"
-                  aria-controls="offcanvasNav"
+                  data-bs-target="#searchOffcanvas"
+                  aria-controls="searchOffcanvas"
+                  aria-label="Abrir Pesquisa"
                 >
                   <i class="bi bi-search fs-4"></i>
                 </button>
@@ -144,20 +155,22 @@
                   class="btn text-white p-1"
                   type="button"
                   data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasNav"
-                  aria-controls="offcanvasNav"
+                  data-bs-target="#wishlistOffcanvas"
+                  aria-controls="wishlistOffcanvas"
+                  aria-label="Abrir lista de favoritos"
                 >
                   <i class="bi bi-heart-fill fs-4"></i>
                 </button>
               </li>
 
-              <li>
+              <li class="nav-item">
                 <button
                   class="btn text-white p-1"
                   type="button"
                   data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvasNav"
-                  aria-controls="offcanvasNav"
+                  data-bs-target="#cartOffcanvas"
+                  aria-controls="cartOffcanvas"
+                  aria-label="Abrir sacola"
                 >
                   <i class="bi bi-handbag fs-4"></i>
                 </button>
@@ -168,811 +181,836 @@
       </nav>
     </header>
 
-    <section id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators m-2">
-        <button
-          type="button"
-          class="active"
-          data-bs-target="#promoCarousel"
-          data-bs-slide-to="0"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
+    <main>
+      <section
+        id="promoCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators m-2">
+          <button
+            type="button"
+            class="active"
+            data-bs-target="#promoCarousel"
+            data-bs-slide-to="0"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
 
-        <button
-          type="button"
-          data-bs-target="#promoCarousel"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-      </div>
-      <!-- Banners -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./assets/img/marketing1.png" class="w-100" alt="" />
+          <button
+            type="button"
+            data-bs-target="#promoCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
         </div>
+        <!-- Banners -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="
+                  https://res.cloudinary.com/dvnfe2e2v/image/upload/w_600,f_auto,q_auto/v1760741249/baner2_i4n8v4.webp
+                "
+              />
 
-        <div class="carousel-item">
-          <img src="./assets/img/marketing2.png" class="w-100" alt="" />
+              <source
+                media="(max-min: 601px)"
+                srcset="
+                  https://res.cloudinary.com/dvnfe2e2v/image/upload/w_1200,f_auto,q_auto/v1760741249/baner2_i4n8v4.webp
+                "
+              />
+              <img
+                src="./assets/img/banner1.webp"
+                class="w-100"
+                alt="Banner - Nova coleção de Moletons"
+              />
+            </picture>
+          </div>
+
+          <div class="carousel-item">
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="
+                  https://res.cloudinary.com/dvnfe2e2v/image/upload/w_600,f_auto,q_auto/v1760741249/baner2_i4n8v4.webp
+                "
+              />
+              <source
+                media="(min: 601px)"
+                srcset="
+                  https://res.cloudinary.com/dvnfe2e2v/image/upload/w_1200,f_auto,q_auto/v1760741249/baner2_i4n8v4.webp
+                "
+              />
+              <img
+                src="./assets/img/banner2.webp"
+                class="w-100"
+                alt="Banner - Novidades"
+              />
+            </picture>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Menu horizontal -->
-    <section>
-      <nav class="menu-horizontal">
-        <div class="container-menu">
-          <ul class="itens-menu">
-            <li>
-              <a href="#" class="text-white">Mais Vendidos</a>
+      <!-- Menu horizontal -->
+      <section>
+        <nav class="menu-horizontal">
+          <div class="container-menu">
+            <ul class="itens-menu">
+              <li>
+                <a href="#" class="text-white">Mais Vendidos</a>
+              </li>
+
+              <li>
+                <a href="#" class="text-white">Moletons</a>
+              </li>
+
+              <li>
+                <a href="#" class="text-white">Personalize</a>
+              </li>
+
+              <li>
+                <a href="#" class="text-white">Moletons</a>
+              </li>
+
+              <li>
+                <a href="#" class="text-white">Action Figure</a>
+              </li>
+
+              <li>
+                <a href="#" class="text-white">Camisetas</a>
+              </li>
+
+              <li>
+                <a href="#" class="text-white">Acessórios</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </section>
+
+      <section>
+        <!-- Produtos mobile -->
+        <div class="container d-md-none">
+          <h3 class="fs-3 mt-4 mb-2 text-dark fw-bolder">Produtos populares</h3>
+
+          <ul class="row list-unstyled">
+            <li class="col-6 mb-4">
+              <div class="card border-0">
+                <img
+                  src="./assets/img/produto-01.png"
+                  class="card-img-top mobile-img"
+                  alt=""
+                />
+                <div class="card-body text-center p-0 mt-2">
+                  <h5 class="card-title fw-medium fs-5">
+                    Funko Pop! Darth Vader
+                  </h5>
+                  <p class="card-text text-start mobile-preco">R$ 99,90</p>
+                  <div class="d-grid mt-3">
+                    <a href="#" class="btn btn-primary text-white">Comprar</a>
+                  </div>
+                </div>
+              </div>
             </li>
 
-            <li>
-              <a href="#" class="text-white">Moletons</a>
+            <li class="col-6 mb-4">
+              <div class="card border-0">
+                <img
+                  src="./assets/img/produto-01.png"
+                  class="card-img-top mobile-img"
+                  alt=""
+                />
+                <div class="card-body text-center p-0 mt-2">
+                  <h5 class="card-title fw-medium fs-5">
+                    Funko Pop! Darth Vader
+                  </h5>
+                  <p class="card-text text-start mobile-preco">R$ 99,90</p>
+                  <div class="d-grid mt-3">
+                    <a href="#" class="btn btn-primary text-white">Comprar</a>
+                  </div>
+                </div>
+              </div>
             </li>
 
-            <li>
-              <a href="#" class="text-white">Personalize</a>
+            <li class="col-6 col-md-3 mb-4">
+              <div class="card border-0">
+                <img
+                  src="./assets/img/produto-01.png"
+                  class="card-img-top mobile-img"
+                  alt=""
+                />
+                <div class="card-body text-center p-0 mt-2">
+                  <h5 class="card-title fw-medium fs-5">
+                    Funko Pop! Darth Vader
+                  </h5>
+                  <p class="card-text text-start mobile-preco">R$ 99,90</p>
+                  <div class="d-grid mt-3">
+                    <a href="#" class="btn btn-primary text-white">Comprar</a>
+                  </div>
+                </div>
+              </div>
             </li>
 
-            <li>
-              <a href="#" class="text-white">Moletons</a>
-            </li>
-
-            <li>
-              <a href="#" class="text-white">Action Figure</a>
-            </li>
-
-            <li>
-              <a href="#" class="text-white">Camisetas</a>
-            </li>
-
-            <li>
-              <a href="#" class="text-white">Acessórios</a>
+            <li class="col-6 col-md-3 mb-4">
+              <div class="card border-0">
+                <img
+                  src="./assets/img/produto-01.png"
+                  class="card-img-top mobile-img"
+                  alt=""
+                />
+                <div class="card-body text-center p-0 mt-2">
+                  <h5 class="card-title fw-medium fs-5">
+                    Funko Pop! Darth Vader
+                  </h5>
+                  <p class="card-text text-start mobile-preco">R$ 99,90</p>
+                  <div class="d-grid mt-3">
+                    <a href="#" class="btn btn-primary text-white">Comprar</a>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </div>
-      </nav>
-    </section>
 
-    <section>
-      <!-- Produtos mobile -->
-      <div class="container d-md-none">
-        <h3 class="fs-3 mt-4 mb-2 text-dark fw-bolder">Produtos populares</h3>
+        <!-- Produtos Desktop -->
+        <!-- Produtos populares -->
+        <div class="container d-none d-md-block mx-auto">
+          <h3 class="fs-3 mt-4 mb-2 text-dark fw-bolder">Produtos populares</h3>
+          <!-- slider-wrapper -->
+          <div class="slider-wrapper">
+            <!-- Botões anterior e próximo -->
 
-        <ul class="row list-unstyled">
-          <li class="col-6 mb-4">
-            <div class="card border-0">
-              <img
-                src="./assets/img/produto-01.png"
-                class="card-img-top mobile-img"
-                alt=""
-              />
-              <div class="card-body text-center p-0 mt-2">
-                <h5 class="card-title fw-medium fs-5">
-                  Funko Pop! Darth Vader
-                </h5>
-                <p class="card-text text-start mobile-preco">R$ 99,90</p>
-                <div class="d-grid mt-3">
-                  <a href="#" class="btn btn-primary text-white">Comprar</a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="col-6 mb-4">
-            <div class="card border-0">
-              <img
-                src="./assets/img/produto-01.png"
-                class="card-img-top mobile-img"
-                alt=""
-              />
-              <div class="card-body text-center p-0 mt-2">
-                <h5 class="card-title fw-medium fs-5">
-                  Funko Pop! Darth Vader
-                </h5>
-                <p class="card-text text-start mobile-preco">R$ 99,90</p>
-                <div class="d-grid mt-3">
-                  <a href="#" class="btn btn-primary text-white">Comprar</a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="col-6 col-md-3 mb-4">
-            <div class="card border-0">
-              <img
-                src="./assets/img/produto-01.png"
-                class="card-img-top mobile-img"
-                alt=""
-              />
-              <div class="card-body text-center p-0 mt-2">
-                <h5 class="card-title fw-medium fs-5">
-                  Funko Pop! Darth Vader
-                </h5>
-                <p class="card-text text-start mobile-preco">R$ 99,90</p>
-                <div class="d-grid mt-3">
-                  <a href="#" class="btn btn-primary text-white">Comprar</a>
-                </div>
-              </div>
-            </div>
-          </li>
-
-          <li class="col-6 col-md-3 mb-4">
-            <div class="card border-0">
-              <img
-                src="./assets/img/produto-01.png"
-                class="card-img-top mobile-img"
-                alt=""
-              />
-              <div class="card-body text-center p-0 mt-2">
-                <h5 class="card-title fw-medium fs-5">
-                  Funko Pop! Darth Vader
-                </h5>
-                <p class="card-text text-start mobile-preco">R$ 99,90</p>
-                <div class="d-grid mt-3">
-                  <a href="#" class="btn btn-primary text-white">Comprar</a>
-                </div>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Produtos Desktop -->
-      <!-- Produtos populares -->
-      <div class="container d-none d-md-block mx-auto">
-        <h3 class="fs-3 mt-4 mb-2 text-dark fw-bolder">Produtos populares</h3>
-        <!-- slider-wrapper -->
-        <div class="slider-wrapper">
-          <!-- Botões anterior e próximo -->
-
-          <button
-            id="prevBtn"
-            class="btn-slider-control slider-left-btn"
-            type="button"
-          >
-            <i class="bi bi-arrow-left-circle-fill fs-4 text-dark"></i>
-          </button>
-
-          <button
-            id="nextBtn"
-            class="btn-slider-control slider-right-btn"
-            type="button"
-          >
-            <i class="bi bi-arrow-right-circle-fill fs-4 text-dark"></i>
-          </button>
-
-          <div
-            id="productScrollArea"
-            class="products-scroll-area overflow-x-scroll"
-          >
-            <ul class="d-flex flex-row flex-nowrap list-unstyled product-list">
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Novidades -->
-      <div class="container d-none d-md-block mx-auto">
-        <h3 class="fs-3 mt-5 mb-2 text-dark fw-bolder">Novidades</h3>
-        <!-- slider-wrapper -->
-        <div class="slider-wrapper">
-          <!-- Botões anterior e próximo -->
-
-          <button
-            id="prevBtn"
-            class="btn-slider-control slider-left-btn"
-            type="button"
-          >
-            <i class="bi bi-arrow-left-circle-fill fs-4 text-dark"></i>
-          </button>
-
-          <button
-            id="nextBtn"
-            class="btn-slider-control slider-right-btn"
-            type="button"
-          >
-            <i class="bi bi-arrow-right-circle-fill fs-4 text-dark"></i>
-          </button>
-
-          <div
-            id="productScrollArea"
-            class="products-scroll-area overflow-x-scroll"
-          >
-            <ul class="d-flex flex-row flex-nowrap list-unstyled product-list">
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Mais vendidos -->
-      <div class="container d-none d-md-block mx-auto">
-        <h3 class="fs-3 mt-5 mb-2 text-dark fw-bolder">Mais vendidos</h3>
-        <!-- slider-wrapper -->
-        <div class="slider-wrapper">
-          <!-- Botões anterior e próximo -->
-
-          <button
-            id="prevBtn"
-            class="btn-slider-control slider-left-btn"
-            type="button"
-          >
-            <i class="bi bi-arrow-left-circle-fill fs-4 text-dark"></i>
-          </button>
-
-          <button
-            id="nextBtn"
-            class="btn-slider-control slider-right-btn"
-            type="button"
-          >
-            <i class="bi bi-arrow-right-circle-fill fs-4 text-dark"></i>
-          </button>
-
-          <div
-            id="productScrollArea"
-            class="products-scroll-area overflow-x-scroll"
-          >
-            <ul class="d-flex flex-row flex-nowrap list-unstyled product-list">
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li class="product-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/produto-01-d.png"
-                    class="card-img-top desktop-img"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <h5 class="card-title fw-medium fs-5">
-                      Funko Pop! - Homem de Ferro
-                    </h5>
-                    <p class="card-text text-start desktop-preco">R$79.99</p>
-                    <div class="d-grid mt-3">
-                      <a href="#" class="btn btn-primary text-white">Comprar</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <!-- Comentarios -->
-      <div class="container">
-        <h4 class="fs-4 mt-5 text-dark text-center fw-bolder">
-          O que estão dizendo sobre nós
-        </h4>
-        <p class="fs-6 text-center">Comentários reais dos nossos clientes</p>
-        <div class="dec"></div>
-        <!-- slider-wrapper -->
-        <div class="slider-wrapper">
-          <!-- Botões anterior e próximo -->
-
-          <button
-            id="prevBtn"
-            class="btn-slider-control slider-left-btn-c"
-            type="button"
-          >
-            <i class="bi bi-arrow-left fs-4 text-dark"></i>
-          </button>
-
-          <button
-            id="nextBtn"
-            class="btn-slider-control slider-right-btn-c"
-            type="button"
-          >
-            <i class="bi bi-arrow-right fs-4 text-dark"></i>
-          </button>
-
-          <div
-            id="commentsScrollArea"
-            class="comments-scroll-area overflow-x-scroll"
-          >
-            <!-- Comentarios -->
-            <ul class="d-flex flex-row flex-nowrap list-unstyled comment-list">
-              <!-- Comentario 1 -->
-              <li class="comment-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/perfil-m.png"
-                    class="card-img-top img-fluid"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <div class="container mb-2">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4 class="card-title text-center fw-medium">João M.</h4>
-                    <p class="text-center card-text">
-                      "A ManaVault é o meu novo portal para o universo geek!
-                      Encontrei action figures incríveis e a entrega foi super
-                      rápida. O site é fácil de navegar e a experiência de
-                      compra é épica. Recomendo muito!"
-                    </p>
-                  </div>
-                </div>
-              </li>
-
-              <!-- Comentario 2 -->
-              <li class="comment-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/perfil-m.png"
-                    class="card-img-top img-fluid"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <div class="container mb-2">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4 class="card-title text-center fw-medium">João M.</h4>
-                    <p class="text-center card-text">
-                      "A ManaVault é o meu novo portal para o universo geek!
-                      Encontrei action figures incríveis e a entrega foi super
-                      rápida. O site é fácil de navegar e a experiência de
-                      compra é épica. Recomendo muito!"
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <!-- Comentario 3 -->
-              <li class="comment-item">
-                <div class="card border-0">
-                  <img
-                    src="./assets/img/perfil-m.png"
-                    class="card-img-top img-fluid"
-                    alt=""
-                  />
-                  <div class="card-body text-center p-0 mt-2">
-                    <div class="container mb-2">
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                      <i class="bi bi-star-fill"></i>
-                    </div>
-                    <h4 class="card-title text-center fw-medium">João M.</h4>
-                    <p class="text-center card-text">
-                      "A ManaVault é o meu novo portal para o universo geek!
-                      Encontrei action figures incríveis e a entrega foi super
-                      rápida. O site é fácil de navegar e a experiência de
-                      compra é épica. Recomendo muito!"
-                    </p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Sobre -->
-    <section>
-      <!-- Mobile -->
-      <div class="d-md-none">
-        <div class="containerbg-primary bg-primary py-4">
-          <h3 class="text-white fs-3 fw-bolder mx-2">Sobre nós</h3>
-          <p class="about-text mt-2 mx-2">
-            Fundada em 2020, a ManaVault nasceu de uma paixão por tudo que é
-            geek. O que começou como um projeto de um pequeno grupo de amigos,
-            colecionadores e jogadores, rapidamente se transformou em um refúgio
-            online para outros entusiastas. Em pouco tempo, a ManaVault deixou
-            de ser apenas uma loja para se tornar uma comunidade. Com cada
-            produto cuidadosamente selecionado — de action figures raras a
-            canecas temáticas — a loja se empenhou em oferecer não só itens, mas
-            uma verdadeira experiência de caça ao tesouro. Hoje, com 5 anos de
-            história, a ManaVault celebra a cultura geek em todas as suas
-            formas, conectando fãs de games, animes, filmes e RPGs. Continuamos
-            crescendo e evoluindo, mas nosso propósito permanece o mesmo: ser o
-            seu portal para o universo geek, o cofre onde toda a sua mana e
-            paixão são guardadas e compartilhadas
-          </p>
-        </div>
-
-        <div class="bg-secondary gap-2 py-2">
-          <div class="d-flex align-items-center justify-content-center gap-3">
-            <i class="bi bi-envelope fs-2"></i>
-            <h5 class="fs-5 text-white fw-normal mb-0">
-              Receba novidades e promoções
-            </h5>
-          </div>
-
-          <div class="container px-5 about-form-mobile">
-            <form>
-              <div class="form-group mt-2">
-                <label for="name" class="text-white">Seu nome</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  aria-describedby="name"
-                />
-              </div>
-
-              <div class="form-group mt-2">
-                <label for="email" class="text-white">Seu e-mail</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  aria-describedby="email"
-                />
-              </div>
-              <button
-                class="btn btn-primary text-white w-100 mt-3"
-                type="submit"
-              >
-                Enviar
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <!-- Desktop -->
-      <div class="d-none d-md-block mt-3">
-        <div class="container bg-primary p-0 rounded about-form">
-          <h3 class="text-white fs-3 fw-bolder mx-4 pt-2">Sobre nós</h3>
-          <p class="about-text mt-2 mx-5">
-            Fundada em 2020, a ManaVault nasceu de uma paixão por tudo que é
-            geek. O que começou como um projeto de um pequeno grupo de amigos,
-            colecionadores e jogadores, rapidamente se transformou em um refúgio
-            online para outros entusiastas. Em pouco tempo, a ManaVault deixou
-            de ser apenas uma loja para se tornar uma comunidade. Com cada
-            produto cuidadosamente selecionado — de action figures raras a
-            canecas temáticas — a loja se empenhou em oferecer não só itens, mas
-            uma verdadeira experiência de caça ao tesouro. Hoje, com 5 anos de
-            história, a ManaVault celebra a cultura geek em todas as suas
-            formas, conectando fãs de games, animes, filmes e RPGs. Continuamos
-            crescendo e evoluindo, mas nosso propósito permanece o mesmo: ser o
-            seu portal para o universo geek, o cofre onde toda a sua mana e
-            paixão são guardadas e compartilhadas
-          </p>
-
-          <div class="bg-secondary gap-2 py-2 rounded d-flex">
-            <div
-              class="d-flex align-items-center justify-content-center gap-3 mx-3"
+            <button
+              id="prevBtn"
+              class="btn-slider-control slider-left-btn"
+              type="button"
             >
+              <i class="bi bi-arrow-left-circle-fill fs-4 text-dark"></i>
+            </button>
+
+            <button
+              id="nextBtn"
+              class="btn-slider-control slider-right-btn"
+              type="button"
+            >
+              <i class="bi bi-arrow-right-circle-fill fs-4 text-dark"></i>
+            </button>
+
+            <div
+              id="productScrollArea"
+              class="products-scroll-area overflow-x-scroll"
+            >
+              <ul
+                class="d-flex flex-row flex-nowrap list-unstyled product-list"
+              >
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Novidades -->
+        <div class="container d-none d-md-block mx-auto">
+          <h3 class="fs-3 mt-5 mb-2 text-dark fw-bolder">Novidades</h3>
+          <!-- slider-wrapper -->
+          <div class="slider-wrapper">
+            <!-- Botões anterior e próximo -->
+
+            <button
+              id="prevBtn"
+              class="btn-slider-control slider-left-btn"
+              type="button"
+            >
+              <i class="bi bi-arrow-left-circle-fill fs-4 text-dark"></i>
+            </button>
+
+            <button
+              id="nextBtn"
+              class="btn-slider-control slider-right-btn"
+              type="button"
+            >
+              <i class="bi bi-arrow-right-circle-fill fs-4 text-dark"></i>
+            </button>
+
+            <div
+              id="productScrollArea"
+              class="products-scroll-area overflow-x-scroll"
+            >
+              <ul
+                class="d-flex flex-row flex-nowrap list-unstyled product-list"
+              >
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mais vendidos -->
+        <div class="container d-none d-md-block mx-auto">
+          <h3 class="fs-3 mt-5 mb-2 text-dark fw-bolder">Mais vendidos</h3>
+          <!-- slider-wrapper -->
+          <div class="slider-wrapper">
+            <!-- Botões anterior e próximo -->
+
+            <button
+              id="prevBtn"
+              class="btn-slider-control slider-left-btn"
+              type="button"
+            >
+              <i class="bi bi-arrow-left-circle-fill fs-4 text-dark"></i>
+            </button>
+
+            <button
+              id="nextBtn"
+              class="btn-slider-control slider-right-btn"
+              type="button"
+            >
+              <i class="bi bi-arrow-right-circle-fill fs-4 text-dark"></i>
+            </button>
+
+            <div
+              id="productScrollArea"
+              class="products-scroll-area overflow-x-scroll"
+            >
+              <ul
+                class="d-flex flex-row flex-nowrap list-unstyled product-list"
+              >
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="product-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/produto-01-d.png"
+                      class="card-img-top desktop-img"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <h5 class="card-title fw-medium fs-5">
+                        Funko Pop! - Homem de Ferro
+                      </h5>
+                      <p class="card-text text-start desktop-preco">R$79.99</p>
+                      <div class="d-grid mt-3">
+                        <a href="#" class="btn btn-primary text-white"
+                          >Comprar</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <!-- Comentarios -->
+        <div class="container">
+          <h4 class="fs-4 mt-5 text-dark text-center fw-bolder">
+            O que estão dizendo sobre nós
+          </h4>
+          <p class="fs-6 text-center">Comentários reais dos nossos clientes</p>
+          <div class="dec"></div>
+          <!-- slider-wrapper -->
+          <div class="slider-wrapper">
+            <!-- Botões anterior e próximo -->
+
+            <button
+              id="prevBtn"
+              class="btn-slider-control slider-left-btn-c"
+              type="button"
+            >
+              <i class="bi bi-arrow-left fs-4 text-dark"></i>
+            </button>
+
+            <button
+              id="nextBtn"
+              class="btn-slider-control slider-right-btn-c"
+              type="button"
+            >
+              <i class="bi bi-arrow-right fs-4 text-dark"></i>
+            </button>
+
+            <div
+              id="commentsScrollArea"
+              class="comments-scroll-area overflow-x-scroll"
+            >
+              <!-- Comentarios -->
+              <ul
+                class="d-flex flex-row flex-nowrap list-unstyled comment-list"
+              >
+                <!-- Comentario 1 -->
+                <li class="comment-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/perfil-m.png"
+                      class="card-img-top img-fluid"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <div class="container mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                      <h4 class="card-title text-center fw-medium">João M.</h4>
+                      <p class="text-center card-text">
+                        "A ManaVault é o meu novo portal para o universo geek!
+                        Encontrei action figures incríveis e a entrega foi super
+                        rápida. O site é fácil de navegar e a experiência de
+                        compra é épica. Recomendo muito!"
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Comentario 2 -->
+                <li class="comment-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/perfil-m.png"
+                      class="card-img-top img-fluid"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <div class="container mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                      <h4 class="card-title text-center fw-medium">João M.</h4>
+                      <p class="text-center card-text">
+                        "A ManaVault é o meu novo portal para o universo geek!
+                        Encontrei action figures incríveis e a entrega foi super
+                        rápida. O site é fácil de navegar e a experiência de
+                        compra é épica. Recomendo muito!"
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <!-- Comentario 3 -->
+                <li class="comment-item">
+                  <div class="card border-0">
+                    <img
+                      src="./assets/img/perfil-m.png"
+                      class="card-img-top img-fluid"
+                      alt=""
+                    />
+                    <div class="card-body text-center p-0 mt-2">
+                      <div class="container mb-2">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                      </div>
+                      <h4 class="card-title text-center fw-medium">João M.</h4>
+                      <p class="text-center card-text">
+                        "A ManaVault é o meu novo portal para o universo geek!
+                        Encontrei action figures incríveis e a entrega foi super
+                        rápida. O site é fácil de navegar e a experiência de
+                        compra é épica. Recomendo muito!"
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sobre -->
+      <section>
+        <!-- Mobile -->
+        <div class="d-md-none">
+          <div class="containerbg-primary bg-primary py-4">
+            <h3 class="text-white fs-3 fw-bolder mx-2">Sobre nós</h3>
+            <p class="about-text mt-2 mx-2">
+              Fundada em 2020, a ManaVault nasceu de uma paixão por tudo que é
+              geek. O que começou como um projeto de um pequeno grupo de amigos,
+              colecionadores e jogadores, rapidamente se transformou em um
+              refúgio online para outros entusiastas. Em pouco tempo, a
+              ManaVault deixou de ser apenas uma loja para se tornar uma
+              comunidade. Com cada produto cuidadosamente selecionado — de
+              action figures raras a canecas temáticas — a loja se empenhou em
+              oferecer não só itens, mas uma verdadeira experiência de caça ao
+              tesouro. Hoje, com 5 anos de história, a ManaVault celebra a
+              cultura geek em todas as suas formas, conectando fãs de games,
+              animes, filmes e RPGs. Continuamos crescendo e evoluindo, mas
+              nosso propósito permanece o mesmo: ser o seu portal para o
+              universo geek, o cofre onde toda a sua mana e paixão são guardadas
+              e compartilhadas
+            </p>
+          </div>
+
+          <div class="bg-secondary gap-2 py-2">
+            <div class="d-flex align-items-center justify-content-center gap-3">
               <i class="bi bi-envelope fs-2"></i>
               <h5 class="fs-5 text-white fw-normal mb-0">
                 Receba novidades e promoções
               </h5>
             </div>
 
-            <div class="container">
-              <form class="d-flex gap-2">
+            <div class="container px-5 about-form-mobile">
+              <form>
                 <div class="form-group mt-2">
                   <label for="name" class="text-white">Seu nome</label>
                   <input
@@ -993,7 +1031,7 @@
                   />
                 </div>
                 <button
-                  class="btn btn-primary btn-lg h-50 mt-4 text-white"
+                  class="btn btn-primary text-white w-100 mt-3"
                   type="submit"
                 >
                   Enviar
@@ -1002,13 +1040,77 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
+
+        <!-- Desktop -->
+        <div class="d-none d-md-block mt-3">
+          <div class="container bg-primary p-0 rounded about-form">
+            <h3 class="text-white fs-3 fw-bolder mx-4 pt-2">Sobre nós</h3>
+            <p class="about-text mt-2 mx-5">
+              Fundada em 2020, a ManaVault nasceu de uma paixão por tudo que é
+              geek. O que começou como um projeto de um pequeno grupo de amigos,
+              colecionadores e jogadores, rapidamente se transformou em um
+              refúgio online para outros entusiastas. Em pouco tempo, a
+              ManaVault deixou de ser apenas uma loja para se tornar uma
+              comunidade. Com cada produto cuidadosamente selecionado — de
+              action figures raras a canecas temáticas — a loja se empenhou em
+              oferecer não só itens, mas uma verdadeira experiência de caça ao
+              tesouro. Hoje, com 5 anos de história, a ManaVault celebra a
+              cultura geek em todas as suas formas, conectando fãs de games,
+              animes, filmes e RPGs. Continuamos crescendo e evoluindo, mas
+              nosso propósito permanece o mesmo: ser o seu portal para o
+              universo geek, o cofre onde toda a sua mana e paixão são guardadas
+              e compartilhadas
+            </p>
+
+            <div class="bg-secondary gap-2 py-2 rounded d-flex">
+              <div
+                class="d-flex align-items-center justify-content-center gap-3 mx-3"
+              >
+                <i class="bi bi-envelope fs-2"></i>
+                <h5 class="fs-5 text-white fw-normal mb-0">
+                  Receba novidades e promoções
+                </h5>
+              </div>
+
+              <div class="container">
+                <form class="d-flex gap-2">
+                  <div class="form-group mt-2">
+                    <label for="name" class="text-white">Seu nome</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      aria-describedby="name"
+                    />
+                  </div>
+
+                  <div class="form-group mt-2">
+                    <label for="email" class="text-white">Seu e-mail</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      aria-describedby="email"
+                    />
+                  </div>
+                  <button
+                    class="btn btn-primary btn-lg h-50 mt-4 text-white"
+                    type="submit"
+                  >
+                    Enviar
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="mt-5 py-2 py-md-0 bg-secondary text-white">
-      <div class="container text-start">
+      <div class="container text-center m-0">
         <div class="row bg-secondary">
-          <div class="col-12 col-md-4 text-center">
+          <div class="col-12 col-md-4">
             <div class="text-center">
               <a href="./index.html">
                 <img
@@ -1021,7 +1123,7 @@
 
             <h4 class="fs-4 fw-bolder">Central de atendimento</h4>
 
-            <div class="d-flex flex-column">
+            <div class="d-flex flex-column align-items-center">
               <div class="d-flex gap-2 mt-2">
                 <i class="bi bi-whatsapp icon-footer"></i
                 ><a href="tel:+99 9999-999" class="text-white">99 9999-999</a>
@@ -1038,7 +1140,7 @@
           </div>
 
           <!-- 2 col - mobile -->
-          <div class="col-6 col-md-2">
+          <div class="col-6 col-md-3">
             <h4 class="fs-4 fw-bolder mt-2 mt-md-5">Informações</h4>
             <ul class="list-unstyled">
               <li class="mb-2">
@@ -1063,7 +1165,7 @@
             </ul>
           </div>
           <!-- Col 2 -->
-          <div class="col-6 col-md-2">
+          <div class="col-6 col-md-3">
             <h4 class="fs-4 text-white fw-bolder mt-2 mt-md-5">Loja</h4>
             <ul class="list-unstyled">
               <li class="mb-2">
@@ -1099,35 +1201,41 @@
               </li>
             </ul>
           </div>
-          <div class="col-12 col-md-2 mt-2">
+          <div class="col-12 col-md-4 mt-2">
             <ul
               class="list-unstyled d-flex justify-content-center mt-md-5 gap-2"
             >
               <li>
                 <a href="#"
-                  ><i class="bi bi-facebook fs-2 icon-footer-s"></i
+                  ><i class="bi bi-facebook fs-1 icon-footer-s"></i
                 ></a>
               </li>
               <li>
                 <a href="#"
-                  ><i class="bi bi-instagram fs-2 icon-footer-s"></i
+                  ><i class="bi bi-instagram fs-1 icon-footer-s"></i
                 ></a>
               </li>
               <li>
                 <a href="#"
-                  ><i class="bi bi-pinterest fs-2 icon-footer-s"></i
+                  ><i class="bi bi-pinterest fs-1 icon-footer-s"></i
                 ></a>
               </li>
               <li>
-                <a href="#"><i class="bi bi-tiktok fs-2 icon-footer-s"></i></a>
+                <a href="#"><i class="bi bi-tiktok fs-1 icon-footer-s"></i></a>
               </li>
             </ul>
           </div>
 
-          <div class="col-12 col-md-12 mt-2 text-center">
-            <h4 class="fs-4 text-center">Site seguro</h4>
-            <div class="d-flex align-items-center justify-content-center gap-4">
-              <img src="./assets/img/c1.png" class="img-c d-block" alt="" />
+          <div
+            class="col-12 col-md-8 mt-2 d-flex flex-column align-items-md-end"
+          >
+            <h4 class="fs-4">Site seguro</h4>
+            <div class="d-flex align-items-center justify-content-center">
+              <img
+                src="./assets/img/certificacao.webp"
+                class="img-c d-block"
+                alt="Certificação"
+              />
               <a href="#"><i class="bi bi-whatsapp icon-w"></i></a>
             </div>
           </div>
@@ -1149,5 +1257,116 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Offcanvas Menu Hambúrguer -->
+    <div
+      class="offcanvas offcanvas-start bg-light"
+      tabindex="-1"
+      id="offcanvasNav"
+      aria-labelledby="offcanvasNavLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavLabel">
+          Navegação Principal
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Início</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Produtos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Ofertas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Offcanvas Campo de Pesquisa -->
+    <div
+      class="offcanvas offcanvas-top"
+      tabindex="-1"
+      id="searchOffcanvas"
+      aria-labelledby="searchOffcanvas"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="searchOffcanvasLabel">
+          Buscar Produtos
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Digite sua pesquisa..."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-sucess" type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Offcanvas Lista de Desejos (Favoritos) -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="wishlistOffcanvas"
+      aria-labelledby="wishlistOffcanvas"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="wishlistOffcanvasLabel">
+          Meus Favoritos
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <p>Você ainda não adicionou itens aos seus favoritos.</p>
+      </div>
+    </div>
+
+    <!-- Offcanvas Lista de Desejos (Favoritos) -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="cartOffcanvas"
+      aria-label="cartOffcanvas"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="cartOffcanvasLabel">Sua Sacola</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <p>Sua sacola está vazia.</p>
+      </div>
+    </div>
   </body>
 </html>

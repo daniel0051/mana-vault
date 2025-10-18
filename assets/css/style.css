@@ -188,7 +188,7 @@ section .carousel-inner .carousel-item img {
   left: -20px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 820px) {
   .about-form {
     position: relative;
   }
