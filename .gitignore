@@ -1,1 +1,14 @@
-/node_modules
+# -----------------------------------------------------
+# DEPENDÊNCIAS E CONFIGURAÇÕES DE FERRAMENTAS
+# -----------------------------------------------------
+
+# Dependências do Node.js
+/node_modules/
+
+# -----------------------------------------------------
+# ARQUIVOS GERADOS E DE SAÍDA (IGNORAR TUDO AQUI)
+# -----------------------------------------------------
+
+# 1. Ignorar todos os Source Maps
+# Inclui os arquivos .map gerados na pasta src ou dist
+*.map
