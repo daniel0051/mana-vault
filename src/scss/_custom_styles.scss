@@ -176,6 +176,10 @@ section .carousel-inner .carousel-item img {
 }
 
 /* Sobre */
+.bg-sobre {
+  background: var(--p-4);
+}
+
 .about-text {
   font-size: clamp(1rem, 0.8929rem + 0.4762vw, 1.25rem);
   color: var(--p-5);

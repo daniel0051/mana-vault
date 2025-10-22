@@ -1,19 +1,9 @@
 @import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/variables";
-
-$manavault-purple: #6f42c1;
 
 $font-family-sans-serif: "Montserrat", sans-serif;
 $dark: #141414;
-$primary: #8e84e0;
+$primary: #6f42c1;
 $secondary: #240f32;
-
-$theme-colors: map-merge(
-  $theme-colors,
-  (
-    "purple-btn": $manavault-purple,
-  )
-);
 
 $link-decoration: none;
 
