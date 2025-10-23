@@ -246,3 +246,53 @@ section .carousel-inner .carousel-item img {
   color: var(--p-9);
   font-size: 3rem;
 }
+
+/* Avaliações pagina produto*/
+.rating-bar-label {
+  display: flex;
+  align-items: center;
+}
+
+.rating-score {
+  width: 40px;
+  text-align: center;
+}
+
+.rating-percent {
+  width: 40px;
+  margin-left: 0.75rem;
+}
+
+.rating-bar-container {
+  flex-grow: 1;
+  height: 8px;
+  background: #8e84e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.rating-bar-fill {
+  height: 100%;
+  background: #292929;
+  border-radius: 4px;
+}
+
+.fill-40 {
+  width: 40%;
+}
+
+.fill-30 {
+  width: 30%;
+}
+
+.fill-15 {
+  width: 15%;
+}
+
+.fill-10 {
+  width: 10%;
+}
+
+.fill-5 {
+  width: 5%;
+}
