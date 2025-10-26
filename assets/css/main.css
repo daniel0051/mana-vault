@@ -11985,13 +11985,6 @@ textarea.form-control-lg {
   --p-1: #f1a0f0;
 }
 
-/* Hover menu */
-header a:hover,
-header i:hover,
-.offcanvas a:hover {
-  color: var(--p-4) !important;
-}
-
 /* Altera todos os botões indicadores dentro do carrossel para serem circulares */
 #promoCarousel .carousel-indicators button {
   width: 10px;
@@ -12162,7 +12155,7 @@ section .carousel-inner .carousel-item img {
   position: absolute;
   width: 90px;
   height: 90px;
-  background: url("../../assets/resources/img/dec.png");
+  background: url("../images/dec.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -12179,7 +12172,7 @@ section .carousel-inner .carousel-item img {
     position: absolute;
     width: 90px;
     height: 90px;
-    background: url("../../assets/resources/img/dec.png");
+    background: url("../images/dec.webp");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -12213,7 +12206,15 @@ section .carousel-inner .carousel-item img {
   font-size: 3rem;
 }
 
-/* Avaliações pagina produto*/
+/* IMG card*/
+.card-img {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+/* Avaliações pagina detalhe produto*/
 .rating-bar-label {
   display: flex;
   align-items: center;
@@ -12261,4 +12262,4 @@ section .carousel-inner .carousel-item img {
 
 .fill-5 {
   width: 5%;
-}/*# sourceMappingURL=custom.css.map */
+}/*# sourceMappingURL=main.css.map */

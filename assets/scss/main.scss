@@ -1,5 +1,7 @@
+// Bootstrap
 @import "../../node_modules/bootstrap/scss/functions";
 
+// Pequenos alterações
 $font-family-sans-serif: "Montserrat", sans-serif;
 $dark: #141414;
 $primary: #6f42c1;
@@ -7,5 +9,8 @@ $secondary: #240f32;
 
 $link-decoration: none;
 
+// Bootstrap e alterações
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "custom_styles";
+@import "./abstracts/variables";
+@import "./pages/home";
+@import "./pages/produto-01";
