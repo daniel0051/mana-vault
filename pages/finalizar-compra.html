@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Produto ##</title>
+    <title>Finalizar compra</title>
 
     <!-- Fonte Montserrat -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -190,12 +190,8 @@
     </header>
 
     <main>
-      <!-- Detalhe do produto -->
-      <section
-        class="mt-4"
-        aria-label="Detalhes e Compra do Produto Funko Pop Homem de Ferro"
-      >
-        <div class="container">
+      <section>
+        <div class="container mt-4">
           <div class="d-flex align-items-center gap-3">
             <button
               type="button"
@@ -204,328 +200,263 @@
             >
               <i class="bi bi-arrow-left fs-3"></i>
             </button>
-            <h3 class="fs-3 text-dark fw-bold">Detalhes do produto</h3>
+            <h3 class="fs-3 text-dark fw-bold">Finalizar compra</h3>
           </div>
 
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <img
-                src="../assets/images/produto-01-detalhe.webp"
-                class="img-fluid shadow rounded-3"
-                alt="Funko Pop! Homem de Ferro"
-                srcset="
-                  https://res.cloudinary.com/dvnfe2e2v/image/upload/w_400,h_500,q_auto,f_auto/v1761069032/produto-01-detalhe_ehpevw.webp  400w,
-                  https://res.cloudinary.com/dvnfe2e2v/image/upload/w_800,h_1000,q_auto,f_auto/v1761069032/produto-01-detalhe_ehpevw.webp 800w
-                "
-                sizes="(max-width: 767px) 100vw, 50vw"
-                loading="lazy"
-              />
-            </div>
-
-            <div class="col-12 col-md-6 text-center text-md-start">
-              <h4 class="mt-4 mt-md-0 fs-4 fw-medium">
-                Funko Pop! - Homem de Ferro
-              </h4>
-              <p>
-                Funko Pop estilizado do Homem de Ferro, medindo aproximadamente
-                20cm de altura, com design característico da linha. Perfeito
-                para fãs da Marvel e colecionadores de Funko.
-              </p>
-
-              <div
-                class="d-flex flex-column flex-md-row justify-content-md-between"
-              >
-                <div class="text-start mb-3 mb-md-0">
-                  <span class="d-block fw-bold">Preço</span>
-                  <span class="d-block fs-6">R$ 199,99</span>
+          <form>
+            <div class="row">
+              <div class="col-12 col-md-6 mt-2">
+                <h5 class="fs-5 fw-bold">Informações de envio</h5>
+                <div class="mt-2">
+                  <label for="endereco" class="form-label">Endereço</label>
+                  <input
+                    type="text"
+                    id="endereco"
+                    name="endereco"
+                    class="form-control"
+                  />
                 </div>
 
-                <div class="d-flex flex-column align-items-md-start gap-2">
-                  <span class="fw-bold text-start">Opções</span>
+                <div class="mt-2">
+                  <label for="complemento" class="form-label"
+                    >Complemento (Opicional)</label
+                  >
+                  <input
+                    type="text"
+                    id="complemento"
+                    name="complemento"
+                    class="form-control"
+                  />
+                </div>
 
-                  <div class="d-flex align-items-center">
-                    <form class="d-flex align-items-center gap-2">
-                      <label for="quantidade" class="form-label"
-                        >Quantidade:</label
-                      >
-                      <input
-                        type="number"
-                        id="quantidade"
-                        name="quantidade"
-                        value="1"
-                        min="1"
-                        max="99"
-                        class="form-control"
-                        aria-label="Quantidade Atual"
-                      />
-                    </form>
+                <div class="d-flex gap-2 mt-2">
+                  <div class="w-100">
+                    <label for="cep" class="form-label">CEP</label>
+                    <input
+                      type="text"
+                      id="cep"
+                      name="cep"
+                      class="form-control"
+                    />
+                  </div>
+
+                  <div class="w-100">
+                    <label for="cidade" class="form-label">Cidade</label>
+                    <input
+                      type="text"
+                      id="cidade"
+                      name="cidade"
+                      class="form-control"
+                    />
                   </div>
                 </div>
-              </div>
-              <a
-                href="./finalizar-compra.html"
-                class="btn btn-primary py-2 mt-3 w-100"
-              >
-                Adicionar ao Carrinho
-              </a>
-              <div class="mt-3">
-                <h5 class="fs-6 fw-bold text-start">Calcular frete</h5>
-                <form>
-                  <div class="d-flex gap-2">
-                    <label for="cep" class="visually-hidden"
-                      >Insira seu CEP</label
+
+                <div class="mt-2">
+                  <label for="pais" class="form-label">País</label>
+                  <input
+                    type="text"
+                    id="pais"
+                    name="pais"
+                    class="form-control"
+                  />
+                </div>
+
+                <div class="c-choice-selector mt-2">
+                  <h5 class="fs-5 fw-bold mb-2">Método de envio</h5>
+
+                  <label class="c-choice-selector__item" for="entregaPadrao">
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>
+                        <div class="c-choice-selector__title">
+                          Padrão (5-7 dias)
+                        </div>
+                        <span class="c-choice-selector__detail">Grátis</span>
+                      </div>
+                      <input
+                        type="radio"
+                        name="tipoEntrega"
+                        id="entregaPadrao"
+                        value="padrao"
+                        checked
+                        class="form-check-input"
+                      />
+                    </div>
+                  </label>
+
+                  <label class="c-choice-selector__item" for="entregaExpresso">
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>
+                        <div class="c-choice-selector__title">
+                          Expresso (2-3 dias)
+                        </div>
+                        <span class="c-choice-selector__detail">R$5.99</span>
+                      </div>
+                      <input
+                        type="radio"
+                        name="tipoEntrega"
+                        id="entregaExpresso"
+                        value="expresso"
+                        class="form-check-input"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div class="c-choice-selector mt-2">
+                  <h5 class="fs-5 fw-bold mb-2">Método de pagamento</h5>
+                  <label class="c-choice-selector__item" for="credito">
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>
+                        <div class="c-choice-selector__title">
+                          Cartão de crédito
+                        </div>
+                      </div>
+                      <input
+                        type="radio"
+                        name="metodoPagamento"
+                        id="credito"
+                        value="credito"
+                        checked
+                        class="form-check-input"
+                      />
+                    </div>
+                  </label>
+
+                  <label class="c-choice-selector__item" for="boletoBancario">
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>
+                        <div class="c-choice-selector__title">
+                          Boleto Bancário
+                        </div>
+                      </div>
+                      <input
+                        type="radio"
+                        name="metodoPagamento"
+                        id="boletoBancario"
+                        value="boleto"
+                        class="form-check-input"
+                      />
+                    </div>
+                  </label>
+
+                  <label class="c-choice-selector__item" for="pix">
+                    <div
+                      class="d-flex justify-content-between align-items-center w-100"
+                    >
+                      <div>
+                        <div class="c-choice-selector__title">PIX</div>
+                      </div>
+                      <input
+                        type="radio"
+                        name="metodoPagamento"
+                        id="pix"
+                        value="pix"
+                        class="form-check-input"
+                      />
+                    </div>
+                  </label>
+                </div>
+
+                <div class="mt-2">
+                  <label for="cartao" class="form-label fw-medium"
+                    >Número do cartão</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="cartao"
+                    id="numeroCartao"
+                  />
+                </div>
+
+                <div class="d-flex gap-2 mt-2">
+                  <div class="w-100">
+                    <label for="dataValidade" class="form-label"
+                      >Data de validade</label
                     >
                     <input
-                      class="form-control py-3"
-                      type="text"
-                      name="cep"
-                      id="cep"
-                      placeholder="Insira seu CEP"
+                      type="date"
+                      class="form-control w-100"
+                      name="dataValidade"
+                      id="dataValidade"
                     />
-                    <button type="button" class="btn btn-primary">OK</button>
                   </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Avaliações -->
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-md-6">
-              <div class="row mt-3">
-                <h3 class="fs-3 fw-bold">Avaliações</h3>
-                <div class="col-5">
-                  <span class="fs-1 fw-bold">4.5</span>
-                  <div
-                    aria-label="Média de Avaliações 4.5 estrelas, 150 reviews"
-                  >
-                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                    <i class="bi bi-star-fill" aria-hidden="true"></i>
-                    <i class="bi bi-star" aria-hidden="true"></i>
-                    <div><span class="small">150 reviews</span></div>
+                  <div class="w-100">
+                    <label for="cvv" class="form-label">CVV</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      name="cvv"
+                      id="cvv"
+                    />
                   </div>
                 </div>
-
-                <div
-                  class="col-7 d-flex flex-column"
-                  aria-label="Distribuição percentual de avaliações"
-                  role="img"
-                >
-                  <ul class="rating-distribution-list list-unstyled">
-                    <li class="rating-item">
-                      <div class="rating-bar-label">
-                        <span class="rating-score">5</span>
-                        <div class="rating-bar-container">
-                          <div class="rating-bar-fill fill-40"></div>
-                        </div>
-
-                        <span class="rating-percent">40%</span>
-                      </div>
-                    </li>
-
-                    <li class="rating-item">
-                      <div class="rating-bar-label">
-                        <span class="rating-score">4</span>
-                        <div class="rating-bar-container">
-                          <div class="rating-bar-fill fill-30"></div>
-                        </div>
-
-                        <span class="rating-percent">30%</span>
-                      </div>
-                    </li>
-
-                    <li class="rating-item">
-                      <div class="rating-bar-label">
-                        <span class="rating-score">3</span>
-                        <div class="rating-bar-container">
-                          <div class="rating-bar-fill fill-15"></div>
-                        </div>
-
-                        <span class="rating-percent">15%</span>
-                      </div>
-                    </li>
-
-                    <li class="rating-item">
-                      <div class="rating-bar-label">
-                        <span class="rating-score">2</span>
-                        <div class="rating-bar-container">
-                          <div class="rating-bar-fill fill-10"></div>
-                        </div>
-
-                        <span class="rating-percent">10%</span>
-                      </div>
-                    </li>
-
-                    <li class="rating-item">
-                      <div class="rating-bar-label">
-                        <span class="rating-score">1</span>
-                        <div class="rating-bar-container">
-                          <div class="rating-bar-fill fill-5"></div>
-                        </div>
-
-                        <span class="rating-percent">5%</span>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
               </div>
 
-              <!-- Desktop -->
-              <div class="d-none d-md-block">
-                <hr />
-                <h5 class="fs-5 fw-medium">Avalie este produto</h5>
-                <span>Compartilhe seus pensamentos com outros clientes </span>
-                <a href="#" class="btn btn-primary text-light mt-2"
-                  >Escreva uma avaliação</a
-                >
+              <div class="col-12 col-md-6 mt-2">
+                <h5 class="fs-5 fw-bold">Resumo do Pedido</h5>
+
+                <ul class="list-unstyled">
+                  <li>
+                    <div class="d-flex gap-2 align-items-center">
+                      <img
+                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_56,h_56,f_auto,q_auto/v1761870775/item1_wkgts0.png"
+                        alt="Camiseta"
+                        class="rounded"
+                      />
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium">Geek T-Shirt</span>
+                        <small>Quantity: 2</small>
+                      </div>
+                    </div>
+                  </li>
+
+                  <li class="mt-2">
+                    <div class="d-flex gap-2 align-items-center">
+                      <img
+                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_56,h_56,f_auto,q_auto/v1761870775/item2_m1xea3.png"
+                        alt="Camiseta"
+                        class="rounded"
+                      />
+                      <div class="d-flex flex-column">
+                        <span class="fw-medium">Geek Mug</span>
+                        <small>Quantity: 1</small>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <dl>
+                  <div class="d-flex justify-content-between">
+                    <dt>Subtotal</dt>
+                    <dd>$45.00</dd>
+                  </div>
+
+                  <div class="d-flex justify-content-between">
+                    <dt>Envio</dt>
+                    <dd>Grátis</dd>
+                  </div>
+
+                  <div class="d-flex justify-content-between">
+                    <dt>Total</dt>
+                    <dd>$45.00</dd>
+                  </div>
+                </dl>
+
+                <button type="submit" class="btn btn-primary w-100 mt-2">
+                  Confirmar pedido
+                </button>
               </div>
             </div>
-
-            <div class="col-12 col-md-6 mt-md-5">
-              <ul class="list-unstyled">
-                <li aria-label="Comentário de Lucas">
-                  <div class="d-flex flex-column align-items-start">
-                    <div class="d-flex align-items-center gap-3">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_40,h_40,f_auto,q_auto/v1761252854/perfil-m_o0xdal.png"
-                        alt="Foto de perfil"
-                        class="rounded-circle"
-                        loading="lazy"
-                      />
-                      <div>
-                        <h5 class="fs-5 m-0">Lucas</h5>
-                        <span class="text-primary small">2023-08-15</span>
-                      </div>
-                    </div>
-
-                    <div class="mt-2">
-                      <div aria-label="Avaliação de 5 estrelas">
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                      </div>
-                      <div>
-                        <p>
-                          Excelente produto, muito bem detalhado e com ótima
-                          qualidade. Recomendo!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="mt-4" aria-label="Comentário de Lucas">
-                  <div class="d-flex flex-column align-items-start">
-                    <div class="d-flex align-items-center gap-3">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_40,h_40,f_auto,q_auto/v1761252854/perfil-m_o0xdal.png"
-                        alt="Foto de perfil"
-                        class="rounded-circle"
-                        loading="lazy"
-                      />
-                      <div>
-                        <h5 class="fs-5 m-0">Lucas</h5>
-                        <span class="text-primary small">2023-08-15</span>
-                      </div>
-                    </div>
-
-                    <div class="mt-2">
-                      <div aria-label="Avaliação de 5 estrelas">
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                        <i class="bi bi-star-fill" aria-hidden="true"></i>
-                      </div>
-                      <div>
-                        <p>
-                          Excelente produto, muito bem detalhado e com ótima
-                          qualidade. Recomendo!
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Produtos similares -->
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h3 class="fs-3 fw-bold text-md-center">Produtos similares</h3>
-              <ul class="row list-unstyled d-flex justify-content-md-center">
-                <li class="col-6 col-md-2">
-                  <div class="card border-0">
-                    <a href="#">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_182/v1760816827/produto-01_br8clr.webp"
-                        class="card-img-top card-img"
-                        alt="Funko Pop! Darth Vader"
-                        loading="lazy"
-                      />
-                    </a>
-                    <div class="card-body text-center">
-                      <h6 class="card-title fs-6 fw-medium">
-                        Funko Pop - Darth Vader
-                      </h6>
-                      <span class="card-text">R$ 99,90</span>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="col-6 col-md-2">
-                  <div class="card border-0">
-                    <a href="#">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_182/v1760816827/produto-01_br8clr.webp"
-                        class="card-img-top card-img"
-                        alt="Funko Pop! Darth Vader"
-                        loading="lazy"
-                      />
-                    </a>
-                    <div class="card-body text-center">
-                      <h6 class="card-title fs-6 fw-medium">
-                        Funko Pop - Darth Vader
-                      </h6>
-                      <span class="card-text">R$ 99,90</span>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="d-none d-md-block col-md-2">
-                  <div class="card border-0">
-                    <a href="#">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_182/v1760816827/produto-01_br8clr.webp"
-                        class="card-img-top card-img"
-                        alt="Funko Pop! Darth Vader"
-                        loading="lazy"
-                      />
-                    </a>
-                    <div class="card-body text-center">
-                      <h6 class="card-title fs-6 fw-medium">
-                        Funko Pop - Darth Vader
-                      </h6>
-                      <span class="card-text">R$ 99,90</span>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+          </form>
         </div>
       </section>
     </main>

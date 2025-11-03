@@ -1,0 +1,31 @@
+/* 1. Estilo input Método de envio - Método de pagamento */
+.c-choice-selector__item {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--p9-1);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilo do Texto */
+.c-choice-selector__title {
+  font-weight: 500;
+  color: var(--p-10);
+  line-height: 1.2;
+}
+
+.c-choice-selector__detail {
+  display: block;
+  color: var(--p9-1);
+  /* Substitui text-muted */
+  font-size: 0.875em;
+}
+
+/* Usa a técnica de estilizar o item quando o radio DENTRO DELE está checado. */
+.c-choice-selector__item:has(input[type="radio"]:checked) {
+  border-color: var(--p-4) !important;
+  box-shadow: 0 0 0 0.25rem rgba(123, 67, 240, 0.25);
+}

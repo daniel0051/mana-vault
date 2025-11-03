@@ -1,0 +1,15 @@
+.bi-person-circle,
+.bi-search,
+.bi-heart-fill,
+.bi-handbag,
+.bi-list {
+  color: $light; // cor padrão
+
+  &:hover {
+    color: $info; // muda no hover
+  }
+}
+
+.offcanvas-body .nav-link:hover {
+  color: $info;
+}

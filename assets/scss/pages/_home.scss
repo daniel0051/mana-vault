@@ -14,7 +14,7 @@ section .carousel-inner .carousel-item img {
 
 @media (min-width: 768px) {
   section .carousel-inner .carousel-item img {
-    height: 100vh;
+    height: 80vh;
   }
 }
 
@@ -226,6 +226,11 @@ section .carousel-inner .carousel-item img {
 .icon-w {
   color: var(--p-9);
   font-size: 3rem;
+}
+
+.icon-footer-s:hover,
+.icon-w:hover {
+  color: #fff;
 }
 
 /* IMG card*/

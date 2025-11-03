@@ -12,5 +12,7 @@ $link-decoration: none;
 // Bootstrap e alterações
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./abstracts/variables";
+@import "./components/base";
 @import "./pages/home";
 @import "./pages/produto-01";
+@import "./pages/finalizar-compra";

@@ -11985,6 +11985,25 @@ textarea.form-control-lg {
   --p-1: #f1a0f0;
 }
 
+.bi-person-circle,
+.bi-search,
+.bi-heart-fill,
+.bi-handbag,
+.bi-list {
+  color: #f8f9fa;
+}
+.bi-person-circle:hover,
+.bi-search:hover,
+.bi-heart-fill:hover,
+.bi-handbag:hover,
+.bi-list:hover {
+  color: #0dcaf0;
+}
+
+.offcanvas-body .nav-link:hover {
+  color: #0dcaf0;
+}
+
 /* Altera todos os botões indicadores dentro do carrossel para serem circulares */
 #promoCarousel .carousel-indicators button {
   width: 10px;
@@ -12001,7 +12020,7 @@ section .carousel-inner .carousel-item img {
 
 @media (min-width: 768px) {
   section .carousel-inner .carousel-item img {
-    height: 100vh;
+    height: 80vh;
   }
 }
 /* Menu horizontal */
@@ -12206,6 +12225,11 @@ section .carousel-inner .carousel-item img {
   font-size: 3rem;
 }
 
+.icon-footer-s:hover,
+.icon-w:hover {
+  color: #fff;
+}
+
 /* IMG card*/
 .card-img {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
@@ -12262,4 +12286,36 @@ section .carousel-inner .carousel-item img {
 
 .fill-5 {
   width: 5%;
+}
+
+/* 1. Estilo input Método de envio - Método de pagamento */
+.c-choice-selector__item {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--p9-1);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Estilo do Texto */
+.c-choice-selector__title {
+  font-weight: 500;
+  color: var(--p-10);
+  line-height: 1.2;
+}
+
+.c-choice-selector__detail {
+  display: block;
+  color: var(--p9-1);
+  /* Substitui text-muted */
+  font-size: 0.875em;
+}
+
+/* Usa a técnica de estilizar o item quando o radio DENTRO DELE está checado. */
+.c-choice-selector__item:has(input[type=radio]:checked) {
+  border-color: var(--p-4) !important;
+  box-shadow: 0 0 0 0.25rem rgba(123, 67, 240, 0.25);
 }/*# sourceMappingURL=main.css.map */
