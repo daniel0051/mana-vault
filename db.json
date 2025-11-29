@@ -1,0 +1,40 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Funko Pop! - Superman",
+      "sku": "BAZ-AAA-ACTN-BG-M",
+      "preco": "R$ 149.0",
+      "cartegoria": "Mais vendidos",
+      "estoque": 50,
+      "imagem": "https://res.cloudinary.com/dvnfe2e2v/image/upload/w_346,h_346,f_auto,q_auto/v1764426378/photo-1712698829933-9918ff32f22a_eombps.avif"
+    },
+    {
+      "id": 2,
+      "nome": "Funko Pop! Darth Vader",
+      "sku": "BAZ-AAA-ACTN-BG-Z",
+      "preco": "R$ 200.0",
+      "cartegoria": "Mais vendidos",
+      "estoque": 100,
+      "imagem": "https://res.cloudinary.com/dvnfe2e2v/image/upload/w_346,h_346,f_auto,q_auto/v1760816827/produto-01_br8clr.webp"
+    },
+    {
+      "id": 3,
+      "nome": "Camiseta Dragon ball",
+      "sku": "BAZ-AAA-ACTN-BG-Z",
+      "preco": "R$ 50.0",
+      "cartegoria": "Mais vendidos",
+      "estoque": 100,
+      "imagem": "https://res.cloudinary.com/dvnfe2e2v/image/upload/w_346,h_346,f_auto,q_auto/v1764426445/photo-1678872844677-d650b788709b_t6ppxt.avif"
+    },
+    {
+      "id": 4,
+      "nome": "Funko Pop! - Homem de Ferro",
+      "sku": "BAZ-AAA-ACTN-BG-Z",
+      "preco": "R$ 150.0",
+      "cartegoria": "Mais vendidos",
+      "estoque": 100,
+      "imagem": "https://res.cloudinary.com/dvnfe2e2v/image/upload/w_346,h_346,f_auto,q_auto/v1760816827/produto-01-d_etdjrd.webp"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+@media (min-width: 768px) {
+  .width-form {
+    width: 50%;
+  }
+}
+
+form input:valid,
+form textarea:valid,
+form select:valid {
+  border: 2px solid var(--bs-primary);
+}
+
+form input:invalid,
+form textarea:invalid,
+form select:invalid {
+  border: 2px solid var(--bs-danger);
+}

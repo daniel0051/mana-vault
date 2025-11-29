@@ -1,0 +1,66 @@
+/* Menu horizontal */
+.container-geral-f {
+  width: 90vw;
+}
+
+.c-filter-container {
+  /* Scroll para mobile */
+  overflow-x: auto;
+
+  /* IE and Edge */
+  -ms-overflow-style: none;
+
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+.c-filter-container::-webkit-scrollbar {
+  display: none;
+}
+
+.c-filter-numero {
+  width: 50px;
+}
+
+@media (min-width: 720px) {
+  .c-filter-container {
+    scrollbar-width: auto;
+    padding-bottom: 4px;
+  }
+
+  .c-filter-container::-webkit-scrollbar {
+    display: block;
+    background: transparent;
+    height: 8px;
+    width: 8px;
+  }
+
+  .c-filter-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  /* 3. ESTILIZAR O POLEGAR (A ALÇA QUE VOCÊ ARRASTA) */
+  .c-filter-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+  }
+
+  .c-filter-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    /* Cor mais escura no hover */
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-geral-f {
+    width: 30vw;
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+/* titulo */
+.c-filter-titulo {
+  color: #000;
+}

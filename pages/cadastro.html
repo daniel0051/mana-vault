@@ -153,7 +153,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="./cadastro.html" class="nav-link text-white p-1">
+                <a href="#" class="nav-link text-white p-1">
                   <i class="bi bi-person-circle fs-4"></i>
                 </a>
               </li>
@@ -192,7 +192,7 @@
     <main>
       <section>
         <div class="container mt-4">
-          <div class="d-flex align-items-center gap-3">
+          <div class="d-flex justify-content-center align-items-center gap-3">
             <button
               type="button"
               class="btn d-md-none"
@@ -200,263 +200,158 @@
             >
               <i class="bi bi-arrow-left fs-3"></i>
             </button>
-            <h3 class="fs-3 text-dark fw-bold">Finalizar compra</h3>
+            <h3 class="fs-3 text-dark fw-bold">Cadastro Produto</h3>
           </div>
-
-          <form>
-            <div class="row">
-              <div class="col-12 col-md-6 mt-2">
-                <h5 class="fs-5 fw-bold">Informações de envio</h5>
-                <div class="mt-2">
-                  <label for="endereco" class="form-label">Endereço</label>
-                  <input
-                    type="text"
-                    id="endereco"
-                    name="endereco"
-                    class="form-control"
-                  />
-                </div>
-
-                <div class="mt-2">
-                  <label for="complemento" class="form-label"
-                    >Complemento (Opicional)</label
-                  >
-                  <input
-                    type="text"
-                    id="complemento"
-                    name="complemento"
-                    class="form-control"
-                  />
-                </div>
-
-                <div class="d-flex gap-2 mt-2">
-                  <div class="w-100">
-                    <label for="cep" class="form-label">CEP</label>
+          <div
+            class="d-flex flex-column justify-content-center align-items-center"
+          >
+            <form class="mt-2 width-form" id="form-cadastro-produto" novalidate>
+              <div>
+                <fieldset>
+                  <legend class="fs-5 fw-bold">Dados Básicos do Produto</legend>
+                  <div class="form-group mt-2">
+                    <label for="nome" class="form-label"
+                      >Nome do Produto:</label
+                    >
                     <input
                       type="text"
-                      id="cep"
-                      name="cep"
+                      id="nome"
+                      name="nome"
                       class="form-control"
+                      autofocus
+                      required
                     />
+                    <span class="text-danger small" id="erroNome"></span>
                   </div>
 
-                  <div class="w-100">
-                    <label for="cidade" class="form-label">Cidade</label>
+                  <div class="form-group mt-2">
+                    <label for="sku" class="form-label">SKU/Código:</label>
                     <input
                       type="text"
-                      id="cidade"
-                      name="cidade"
+                      id="sku"
+                      name="sku"
                       class="form-control"
+                      placeholder="Exemplo: XYZ-CAM-POLO-AM-M"
+                      pattern="^[A-Z]{3}-[A-Z]{3}-[A-Z]{4}-[A-Z]{2}-[A-Z]{1}$"
+                      required
                     />
+                    <span class="text-danger small" id="erroSku"></span>
                   </div>
-                </div>
 
-                <div class="mt-2">
-                  <label for="pais" class="form-label">País</label>
-                  <input
-                    type="text"
-                    id="pais"
-                    name="pais"
-                    class="form-control"
-                  />
-                </div>
-
-                <div class="c-choice-selector mt-2">
-                  <h5 class="fs-5 fw-bold mb-2">Método de envio</h5>
-
-                  <label class="c-choice-selector__item" for="entregaPadrao">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">
-                          Padrão (5-7 dias)
-                        </div>
-                        <span class="c-choice-selector__detail">Grátis</span>
-                      </div>
-                      <input
-                        type="radio"
-                        name="tipoEntrega"
-                        id="entregaPadrao"
-                        value="padrao"
-                        checked
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-
-                  <label class="c-choice-selector__item" for="entregaExpresso">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">
-                          Expresso (2-3 dias)
-                        </div>
-                        <span class="c-choice-selector__detail">R$5.99</span>
-                      </div>
-                      <input
-                        type="radio"
-                        name="tipoEntrega"
-                        id="entregaExpresso"
-                        value="expresso"
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-                </div>
-
-                <div class="c-choice-selector mt-2">
-                  <h5 class="fs-5 fw-bold mb-2">Método de pagamento</h5>
-                  <label class="c-choice-selector__item" for="credito">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">
-                          Cartão de crédito
-                        </div>
-                      </div>
-                      <input
-                        type="radio"
-                        name="metodoPagamento"
-                        id="credito"
-                        value="credito"
-                        checked
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-
-                  <label class="c-choice-selector__item" for="boletoBancario">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">
-                          Boleto Bancário
-                        </div>
-                      </div>
-                      <input
-                        type="radio"
-                        name="metodoPagamento"
-                        id="boletoBancario"
-                        value="boleto"
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-
-                  <label class="c-choice-selector__item" for="pix">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">PIX</div>
-                      </div>
-                      <input
-                        type="radio"
-                        name="metodoPagamento"
-                        id="pix"
-                        value="pix"
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-                </div>
-
-                <div class="mt-2">
-                  <label for="cartao" class="form-label fw-medium"
-                    >Número do cartão</label
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    name="cartao"
-                    id="numeroCartao"
-                  />
-                </div>
-
-                <div class="d-flex gap-2 mt-2">
-                  <div class="w-100">
-                    <label for="dataValidade" class="form-label"
-                      >Data de validade</label
+                  <div class="form-group mt-2">
+                    <label for="preco" class="form-label"
+                      >Preço de Venda (R$):</label
                     >
                     <input
-                      type="date"
-                      class="form-control w-100"
-                      name="dataValidade"
-                      id="dataValidade"
+                      type="text"
+                      id="preco"
+                      name="preco"
+                      class="form-control"
+                      required
+                      placeholder="Ex: 10,00"
                     />
+                    <span class="text-danger small" id="erroPreco"></span>
                   </div>
-                  <div class="w-100">
-                    <label for="cvv" class="form-label">CVV</label>
+
+                  <div class="form-group mt-2">
+                    <label for="quantidade" class="form-label"
+                      >Quantidade em Estoque:</label
+                    >
                     <input
                       type="number"
+                      id="quantidade"
+                      name="quantidade"
                       class="form-control"
-                      name="cvv"
-                      id="cvv"
+                      min="0"
+                      required
+                    />
+                    <span class="text-danger small" id="erroQuantidade"></span>
+                  </div>
+
+                  <hr />
+                </fieldset>
+              </div>
+
+              <div>
+                <fieldset>
+                  <legend class="fs-5 fw-bold">Detalhes</legend>
+                  <div class="form-group mt-2">
+                    <label for="categoria" class="form-label">Categoria:</label>
+                    <select
+                      id="categoria"
+                      name="categoria"
+                      class="form-select"
+                      required
+                    >
+                      <option value="" disabled selected>
+                        Selecione uma Categoria
+                      </option>
+                      <option value="mais-vendidos">Mais vendidos</option>
+                      <option value="moletons">Moletons</option>
+                      <option value="personalize">Personalize</option>
+                      <option value="moletons">Moletons</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group mt-2">
+                    <label for="descricao" class="form-label"
+                      >Descrição Completa:</label
+                    >
+                    <textarea
+                      id="descricao"
+                      name="descricao"
+                      rows="4"
+                      class="form-control"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div class="form-group mt-2">
+                    <label for="imagens" class="form-label"
+                      >Imagens do Produto:</label
+                    >
+                    <input
+                      type="file"
+                      id="imagens"
+                      name="imagens"
+                      class="form-control"
+                      accept="image/*"
+                      multiple
+                      required
                     />
                   </div>
-                </div>
+
+                  <hr />
+
+                  <div class="form-check mt-2">
+                    <label for="ativo" class="form-check-label"
+                      >Produto Ativo (Aparecer no site)</label
+                    >
+                    <input
+                      type="checkbox"
+                      id="ativo"
+                      name="ativo"
+                      class="form-check-input"
+                    />
+                  </div>
+                </fieldset>
               </div>
 
-              <div class="col-12 col-md-6 mt-2">
-                <h5 class="fs-5 fw-bold">Resumo do Pedido</h5>
+              <div
+                class="d-flex align-items-center justify-content-between mt-2 gap-2"
+              >
+                <button type="submit" class="btn btn-primary">
+                  Cadastrar Produto
+                </button>
 
-                <ul class="list-unstyled">
-                  <li>
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_56,h_56,f_auto,q_auto/v1761870775/item1_wkgts0.png"
-                        alt="Camiseta"
-                        class="rounded"
-                      />
-                      <div class="d-flex flex-column">
-                        <span class="fw-medium">Geek T-Shirt</span>
-                        <small>Quantity: 2</small>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="mt-2">
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_56,h_56,f_auto,q_auto/v1761870775/item2_m1xea3.png"
-                        alt="Camiseta"
-                        class="rounded"
-                      />
-                      <div class="d-flex flex-column">
-                        <span class="fw-medium">Geek Mug</span>
-                        <small>Quantity: 1</small>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-
-                <dl>
-                  <div class="d-flex justify-content-between">
-                    <dt>Subtotal</dt>
-                    <dd>$45.00</dd>
-                  </div>
-
-                  <div class="d-flex justify-content-between">
-                    <dt>Envio</dt>
-                    <dd>Grátis</dd>
-                  </div>
-
-                  <div class="d-flex justify-content-between">
-                    <dt>Total</dt>
-                    <dd>$45.00</dd>
-                  </div>
-                </dl>
-
-                <button type="submit" class="btn btn-primary w-100 mt-2">
-                  Confirmar pedido
+                <button type="button" class="btn btn-primary" id="limpar">
+                  Limpando os Campos
                 </button>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
+
+          <div class="container mt-3" id="resultado"></div>
         </div>
       </section>
     </main>
@@ -538,9 +433,7 @@
               </li>
 
               <li class="mb-2">
-                <a href="./produtos.html" class="text-white link-info"
-                  >Produtos</a
-                >
+                <a href="#" class="text-white link-info">Produtos</a>
               </li>
 
               <li class="mb-2">
@@ -631,11 +524,17 @@
       </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <script type="module" src="../assets/js/main.js"></script>
 
     <!-- Offcanvas Menu Hambúrguer -->
     <div

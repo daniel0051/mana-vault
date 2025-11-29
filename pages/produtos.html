@@ -202,261 +202,79 @@
             </button>
             <h3 class="fs-3 text-dark fw-bold">Finalizar compra</h3>
           </div>
+        </div>
 
-          <form>
-            <div class="row">
-              <div class="col-12 col-md-6 mt-2">
-                <h5 class="fs-5 fw-bold">Informações de envio</h5>
-                <div class="mt-2">
-                  <label for="endereco" class="form-label">Endereço</label>
-                  <input
-                    type="text"
-                    id="endereco"
-                    name="endereco"
-                    class="form-control"
-                  />
-                </div>
-
-                <div class="mt-2">
-                  <label for="complemento" class="form-label"
-                    >Complemento (Opicional)</label
-                  >
-                  <input
-                    type="text"
-                    id="complemento"
-                    name="complemento"
-                    class="form-control"
-                  />
-                </div>
-
-                <div class="d-flex gap-2 mt-2">
-                  <div class="w-100">
-                    <label for="cep" class="form-label">CEP</label>
-                    <input
-                      type="text"
-                      id="cep"
-                      name="cep"
-                      class="form-control"
-                    />
-                  </div>
-
-                  <div class="w-100">
-                    <label for="cidade" class="form-label">Cidade</label>
-                    <input
-                      type="text"
-                      id="cidade"
-                      name="cidade"
-                      class="form-control"
-                    />
-                  </div>
-                </div>
-
-                <div class="mt-2">
-                  <label for="pais" class="form-label">País</label>
-                  <input
-                    type="text"
-                    id="pais"
-                    name="pais"
-                    class="form-control"
-                  />
-                </div>
-
-                <div class="c-choice-selector mt-2">
-                  <h5 class="fs-5 fw-bold mb-2">Método de envio</h5>
-
-                  <label class="c-choice-selector__item" for="entregaPadrao">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">
-                          Padrão (5-7 dias)
-                        </div>
-                        <span class="c-choice-selector__detail">Grátis</span>
-                      </div>
-                      <input
-                        type="radio"
-                        name="tipoEntrega"
-                        id="entregaPadrao"
-                        value="padrao"
-                        checked
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-
-                  <label class="c-choice-selector__item" for="entregaExpresso">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">
-                          Expresso (2-3 dias)
-                        </div>
-                        <span class="c-choice-selector__detail">R$5.99</span>
-                      </div>
-                      <input
-                        type="radio"
-                        name="tipoEntrega"
-                        id="entregaExpresso"
-                        value="expresso"
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-                </div>
-
-                <div class="c-choice-selector mt-2">
-                  <h5 class="fs-5 fw-bold mb-2">Método de pagamento</h5>
-                  <label class="c-choice-selector__item" for="credito">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">
-                          Cartão de crédito
-                        </div>
-                      </div>
-                      <input
-                        type="radio"
-                        name="metodoPagamento"
-                        id="credito"
-                        value="credito"
-                        checked
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-
-                  <label class="c-choice-selector__item" for="boletoBancario">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">
-                          Boleto Bancário
-                        </div>
-                      </div>
-                      <input
-                        type="radio"
-                        name="metodoPagamento"
-                        id="boletoBancario"
-                        value="boleto"
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-
-                  <label class="c-choice-selector__item" for="pix">
-                    <div
-                      class="d-flex justify-content-between align-items-center w-100"
-                    >
-                      <div>
-                        <div class="c-choice-selector__title">PIX</div>
-                      </div>
-                      <input
-                        type="radio"
-                        name="metodoPagamento"
-                        id="pix"
-                        value="pix"
-                        class="form-check-input"
-                      />
-                    </div>
-                  </label>
-                </div>
-
-                <div class="mt-2">
-                  <label for="cartao" class="form-label fw-medium"
-                    >Número do cartão</label
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    name="cartao"
-                    id="numeroCartao"
-                  />
-                </div>
-
-                <div class="d-flex gap-2 mt-2">
-                  <div class="w-100">
-                    <label for="dataValidade" class="form-label"
-                      >Data de validade</label
-                    >
-                    <input
-                      type="date"
-                      class="form-control w-100"
-                      name="dataValidade"
-                      id="dataValidade"
-                    />
-                  </div>
-                  <div class="w-100">
-                    <label for="cvv" class="form-label">CVV</label>
-                    <input
-                      type="number"
-                      class="form-control"
-                      name="cvv"
-                      id="cvv"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-12 col-md-6 mt-2">
-                <h5 class="fs-5 fw-bold">Resumo do Pedido</h5>
-
-                <ul class="list-unstyled">
-                  <li>
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_56,h_56,f_auto,q_auto/v1761870775/item1_wkgts0.png"
-                        alt="Camiseta"
-                        class="rounded"
-                      />
-                      <div class="d-flex flex-column">
-                        <span class="fw-medium">Geek T-Shirt</span>
-                        <small>Quantity: 2</small>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li class="mt-2">
-                    <div class="d-flex gap-2 align-items-center">
-                      <img
-                        src="https://res.cloudinary.com/dvnfe2e2v/image/upload/w_56,h_56,f_auto,q_auto/v1761870775/item2_m1xea3.png"
-                        alt="Camiseta"
-                        class="rounded"
-                      />
-                      <div class="d-flex flex-column">
-                        <span class="fw-medium">Geek Mug</span>
-                        <small>Quantity: 1</small>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-
-                <dl>
-                  <div class="d-flex justify-content-between">
-                    <dt>Subtotal</dt>
-                    <dd>$45.00</dd>
-                  </div>
-
-                  <div class="d-flex justify-content-between">
-                    <dt>Envio</dt>
-                    <dd>Grátis</dd>
-                  </div>
-
-                  <div class="d-flex justify-content-between">
-                    <dt>Total</dt>
-                    <dd>$45.00</dd>
-                  </div>
-                </dl>
-
-                <button type="submit" class="btn btn-primary w-100 mt-2">
-                  Confirmar pedido
+        <div class="container d-flex gap-3 flex-wrap">
+          <div class="d-flex bg-white container-geral-f container">
+            <ul class="d-flex list-unstyled c-filter-container gap-2">
+              <li>
+                <button class="btn btn-primary rounded-pill text-nowrap">
+                  Funko Pops
                 </button>
-              </div>
+              </li>
+              <li>
+                <button class="btn btn-primary rounded-pill text-nowrap">
+                  Vestuário
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-primary rounded-pill text-nowrap">
+                  Acessórios
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-primary rounded-pill text-nowrap">
+                  Jogos
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-primary rounded-pill text-nowrap">
+                  Colecionáveis
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-primary rounded-pill text-nowrap">
+                  Action Figure
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-flex gap-2 align-items-start flex-wrap">
+            <div class="d-flex gap-2 align-items-center">
+              <label for="categoria" class="c-filter-titulo fw-bold"
+                >Ordernar:</label
+              >
+              <select class="form-select" name="categoria" id="categoria">
+                <option value="" disabled selected>Escolha</option>
+                <option value="mais-vendidos">Mais vendidos</option>
+              </select>
             </div>
-          </form>
+
+            <div class="d-flex align-items-center gap-2">
+              <label for="pagina" class="c-filter-titulo fw-bold"
+                >Página:</label
+              >
+              <input
+                class="c-filter-numero form-control"
+                type="number"
+                min="1"
+                name="pagina"
+                id="pagina"
+              />
+              <span>de 4</span>
+              <button class="btn"><i class="bi bi-arrow-left"></i></button>
+              <button class="btn"><i class="bi bi-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container mt-4">
+          <ul class="row list-unstyled" id="listaProdutos"></ul>
+          <ul class="row list-unstyled" id="ApiFake"></ul>
+          <div id="painel-erro"></div>
         </div>
       </section>
     </main>
@@ -538,9 +356,7 @@
               </li>
 
               <li class="mb-2">
-                <a href="./produtos.html" class="text-white link-info"
-                  >Produtos</a
-                >
+                <a href="#" class="text-white link-info">Produtos</a>
               </li>
 
               <li class="mb-2">
@@ -631,11 +447,17 @@
       </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <script src="../assets/js/produtos.js"></script>
 
     <!-- Offcanvas Menu Hambúrguer -->
     <div
@@ -663,7 +485,7 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./produtos.html">Produtos</a>
+            <a class="nav-link" href="#">Produtos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Ofertas</a>
